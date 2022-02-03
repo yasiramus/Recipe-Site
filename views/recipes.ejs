@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/head')%>
+
+  <body>
+    <%-include('./partials/nav')%>
+
+      <!-- main -->
+      <main class="page">
+        <section class="recipes-container">
+          <!-- tag container -->
+          <div class="tags-container">
+            <h4>recipes</h4>
+            <div class="tags-list">
+              <a href="tag-template">Beef</a>
+              <a href="tag-template">Breakfast</a>
+              <a href="tag-template">Lunch</a>
+              <a href="tag-template">Dinner</a>
+              <a href="newrecipe">Add New Recipe</a>
+            </div>
+          </div>
+          <!-- end of tag container -->
+
+          <!-- recipes list -->
+          <div class="recipes-list">
+            <% if (recipeData.length>0) { %>
+              <%recipeData.reverse().forEach(data=> { %>
+                <a href="/get-single-info/<%=data._id %>" class="recipe">
+                  <img src="../recipes/<%=data.image %> " alt="" class="img recipe-img">
+                  <h5>
+                    <%= data.recipeName %>
+                  </h5>
+                  <p>Prep:<%=data.preparationTime%> | Cook:<%=data.cookTime %>
+                  </p>
+                </a>
+                <% }) %>
+                  <% } else { %>
+                    <p>Content not available at the moment</p>
+                    <% } %>
+          </div>
+        </section>
+      </main>
+
+      <!-- end of main -->
+      <!-- footer -->
+      <%-include('./partials/footer')%>
+        <!-- footer ends -->
+        
+        <script src="../js/main.js"></script>
+        <script src="../js/nav.js"></script>
+  </body>
+
+</html>

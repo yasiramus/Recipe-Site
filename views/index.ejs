@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/head')%>
+
+  <body>
+    <%-include('./partials/nav')%>
+      <!-- main -->
+      <main class="page">
+        <!-- header -->
+        <header class="hero">
+          <div class="hero-container">
+            <div class="hero-text">
+              <h1>spicyz recipes</h1>
+              <h4>no fluff, just recipes</h4>
+            </div>
+            
+          </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- about page section -->
+        <h4 id="about-us">About Us</h4>
+          <section class="about-page">
+            <article>
+              <h2>Explore our huge selection of delicious recipe ideas including;</h2>
+              <p>
+                
+                 easy desserts, delicious vegan and vegetarian dinner ideas, gorgeous pasta recipes,
+                
+              </p>
+              <p>
+                quick bakes, family-friendly meals and gluten-free recipes.
+              </p>
+              <a href="contact" class="btn"> contact </a>
+            </article>
+            <!-- needs fixes -->
+            <img src="../recipes/about.jpeg" alt="Person Pouring Salt in Bowl" class="img about-img" />
+          </section>
+        <h4 id="all-recipe">All Recipe</h4>
+
+        <section class="recipes-container">
+          <!-- tag container -->
+          <div class="tags-container">
+            <h4>recipes</h4>
+            <div class="tags-list">
+              <a href="tag-template">Beef</a>
+              <a href="tag-template">Breakfast</a>
+              <a href="tag-template">Lunch</a>
+              <a href="#">Snack</a>
+              <a href="tag-template">Dinner</a>
+              <a href="newrecipe">Add New Recipe</a>
+            </div>
+          </div>
+          <!-- end of tag container -->
+
+          <!-- recipes list -->
+          <div class="recipes-list" id="recipe-blog">
+
+            <!--first single recipe -->
+            <% if (homeData.length>0) { %>
+              <%homeData.reverse().forEach(data=> { %>
+                <a href="/get-single-info/<%=data._id %>" class="recipe">
+                  <img src="../recipes/<%=data.image %> " alt="" class="img recipe-img">
+                  <h5>
+                    <%= data.recipeName %>
+                  </h5>
+                  <p>Prep:<%=data.preparationTime%> | Cook:<%=data.cookTime %>
+                  </p>
+                </a>
+                <% }) %>
+                <% } else { %>
+                  <p>Content not available at the moment</p>
+                  <% } %>
+          </div>
+          <!-- end of recipes list -->
+        </section>
+      </main>
+      <!-- end of main -->
+
+      <!-- footer -->
+      <%-include('./partials/footer')%>
+        <!-- footer ends -->
+        <script src="../js/main.js"></script>
+        <script src="../js/nav.js"></script>
+  </body>
+
+</html>

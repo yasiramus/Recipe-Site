@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('./partials/head') %>
+
+    <body>
+        <%-include ('./partials/nav') %>
+            <main class="page">
+                <div class="recipe-page">
+                    <section class="recipe-hero">
+                        <img src="../imageUploads/<%= data.image %> " alt="" class="img recipe-hero-img">
+                        <article class="recipe-info">
+                            <h2>
+                                <%= data.recipeName%>
+                            </h2>
+                            <p>
+                                <%= data.bio %>
+                            </p>
+                            <div class="recipe-icons">
+                                <article>
+                                    <i class="fas fa-clock"></i>
+                                    <h5>prep time</h5>
+                                    <p>
+                                        <%= data.preparationTime%>.
+                                    </p>
+                                </article>
+                                <article>
+                                    <i class="far fa-clock"></i>
+                                    <h5>cook time</h5>
+                                    <p>
+                                        <%=data.cookTime%>.
+                                    </p>
+                                </article>
+                                <article>
+                                    <i class="fas fa-user-friends"></i>
+                                    <h5>serving</h5>
+                                    <p>6 servings</p>
+                                </article>
+                            </div>
+                            <p class="recipe-tags">
+                                Tags : <a href="tag-template">beef</a>
+                                <a href="tag-template">breakfast</a>
+                                <a href="tag-template">lunch</a>
+                                <a href="tag-template">pancakes</a>
+                            </p>
+                        </article>
+                    </section>
+                    <!-- content -->
+                    <section class="recipe-content">
+                        <article>
+                            <h4>instructions</h4>
+                            <!-- single instruction -->
+                            <div class="single-instruction">
+                                <header>
+                                    <p>step involve</p>
+                                    <div></div>
+                                </header>
+                                <p>
+                                    <%= data.instructions %>
+                                </p>
+                            </div>
+                        </article>
+                        <article class="second-column">
+                            <div>
+                                <h4>ingredients</h4>
+                                <p class="single-ingredient">
+                                    <%=data.ingredients %>
+                                </p>
+                            </div>
+                            <div>
+                                <h4>items needed</h4>
+                                <p class="single-tool">
+                                    <%=data.itemsNeeded%>
+                                </p>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </main>
+            
+            <!-- footer -->
+            <%-include ('./partials/footer') %>
+                <!-- footer ends -->
+
+                <script src="../js/main.js"></script>
+                <script src="../js/nav.js"></script>
+    </body>
+
+</html>

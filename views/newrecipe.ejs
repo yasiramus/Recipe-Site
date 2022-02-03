@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('./partials/head') %>
+
+    <body>
+        <%-include ('./partials/nav') %>
+            <form action="/insertrecipe" method="post" class="RecipForm  contact-form" enctype="multipart/form-data">
+                <div class="form-row">
+                    <label for="Recipe Name" class="form-label">Recipe Name</label>
+                    <input type="text" name="recipeName" placeholder="Enter name of recipe" class="form-input">
+                </div>
+
+                <div class="form-row">
+                    <label for="Upload Image" class="form-label">Upload Image</label>
+                    <input type="file" name="image" id="image" class="form-label">
+                </div>
+
+                <div class="form-row">
+                    <label for="Category"class="form-label">Category</label>
+                    <select name="category" id="category" class="form-label option">
+                        <option value="Beef">Beef</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Snack">Snack</option>
+                        <option value="Dinner">Dinner</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="Bio" class="form-label">Bio</label>
+                    <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Enter bio of recipe"
+                        class="form-textarea"></textarea>
+                </div>
+
+                <div class="timecalculate form-label">
+                    <label for="Preparation Time">Preparation Time</label>
+                    <input type="time" name="preparationTime" class="option">
+                    <label for="  Cook Time"> Cook Time</label>
+                    <input type="time" name="cookTime" class="option">
+                </div>
+                <div class="form-row">
+
+                    <label for=" Ingredients" class="form-label">Ingredients</label>
+                    <textarea name="ingredients" id="ingredients" cols="30" rows="10" placeholder="input ingredients"
+                        class="form-textarea"></textarea>
+
+                </div>
+                <div class="form-row">
+                    <label for="Items Needed" class="form-label">Items Needed</label>
+                    <textarea name="itemsNeeded" id="itemsNeeded" cols="30" rows="10" placeholder=" input items needed"
+                        class="form-textarea"></textarea>
+
+                </div>
+                <div class="form-row">
+                    <label for="Instructions" class="form-label">Instructions</label>
+                    <textarea name="instructions" id="instructions" cols="30" rows="10"
+                        placeholder="input instructions " class="form-textarea"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-block"> submit </button>
+            </form>
+            <!-- footer -->
+            <%-include('./partials/footer')%>
+                <!-- footer ends -->
+    </body>
+    <script src="../js/main.js"></script>
+    <script src="../js/nav.js"></script>
+</html>
