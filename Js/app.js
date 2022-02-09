@@ -4,6 +4,7 @@ const express = require('express');
 //requiring the dotenv npm package
 require('dotenv').config();
 
+const cors=require('cors')
 //requiring the route folder
 const route = require('../routes/contact');
 const render = require('../routes/render');
@@ -32,6 +33,8 @@ app.use(recipe);
 
 //serving static files
 app.use(express.static('assets'));
+app.use(cors)
+
 
 //setting the morgan and Using the predefined format string
 app.use(morgan('dev'));

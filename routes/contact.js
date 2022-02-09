@@ -7,7 +7,7 @@ const router=express.Router();
 
 router.post('/insert',Controller.SaveContact );
 
-router.get('/',Controller.FetchContact);
+router.get('/fetch-contact',Controller.FetchContact);
 
 router.get('/submit',Controller.Submit);
 

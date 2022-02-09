@@ -1,6 +1,7 @@
 //implenting the controller method 
 //importing or requiring the model in order to have access to the mongoose schema within the model
 const ContactModel=require('../model/contact');
+// const RecipeModel = require('../model/newrecipe')
 
 //saving/sending data to the backend/server
 module.exports.SaveContact=(req,res)=>{
@@ -35,3 +36,4 @@ module.exports.FetchContact=(req,res)=>{
         console.log(err.message);
     })
 }
+

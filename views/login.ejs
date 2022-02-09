@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('./partials/head') %>
+
+    <body>
+        <%-include ('./partials/nav2') %>
+        <article>
+            <form action="" method="post" class="Loginform ">
+                <div class="form-row">
+                    <label for="Username" class="form-label">Username</label>
+                    <input type="text" name="username" placeholder="Enter name of username" class="form-input">
+                </div>
+                <div class="form-row">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" name="email" placeholder="Enter name of email" class="form-input">
+                </div>
+                <div class="form-row">
+                    <label for="Recipe Password" class="form-label">Password</label>
+                    <input type="password" name="Password" placeholder="Enter name of password" class="form-input">
+                </div>
+                <button type="submit" class="btn btn-block"> submit </button>
+            </form>
+        </article>
+            <!-- footer -->
+            <%-include('./partials/footer')%>
+                <!-- footer ends -->
+                <script src="../js/main.js"></script>
+                <script src="../js/nav.js"></script>
+    </body>
+</html>

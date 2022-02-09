@@ -34,21 +34,22 @@
               <a href="contact" class="btn"> contact </a>
             </article>
             <!-- needs fixes -->
-            <img src="../recipes/about.jpeg" alt="Person Pouring Salt in Bowl" class="img about-img" />
+            <img src="../recipes/hero-image.png" alt="Person Pouring Salt in Bowl" class="img about-img " id="custom" />
           </section>
-        <h4 id="all-recipe">All Recipe</h4>
+        <h4 id="all-recipe">Top Recipes</h4>
 
         <section class="recipes-container">
           <!-- tag container -->
           <div class="tags-container">
             <h4>recipes</h4>
             <div class="tags-list">
-              <a href="tag-template">Beef</a>
-              <a href="tag-template">Breakfast</a>
-              <a href="tag-template">Lunch</a>
-              <a href="#">Snack</a>
-              <a href="tag-template">Dinner</a>
-              <a href="newrecipe">Add New Recipe</a>
+              <a href="/category">Beef</a>
+              <a href="/category">Breakfast</a>
+              <a href="/category">Lunch</a>
+              <a href="/category">Snack</a>
+              <a href="/category">Dinner</a>
+              <a href="/newrecipe">Add New Recipe</a>
+              <a href="/all_recipes">View All Recipes</a>
             </div>
           </div>
           <!-- end of tag container -->
@@ -58,9 +59,9 @@
 
             <!--first single recipe -->
             <% if (homeData.length>0) { %>
-              <%homeData.reverse().forEach(data=> { %>
+              <%homeData.slice(homeData.length-6,homeData.length).reverse().forEach(data=> { %>
                 <a href="/get-single-info/<%=data._id %>" class="recipe">
-                  <img src="../recipes/<%=data.image %> " alt="" class="img recipe-img">
+                  <img src="../imageUploads/<%=data.image %> " alt="" class="img recipe-img">
                   <h5>
                     <%= data.recipeName %>
                   </h5>
@@ -82,6 +83,7 @@
         <!-- footer ends -->
         <script src="../js/main.js"></script>
         <script src="../js/nav.js"></script>
+        
   </body>
 
 </html>

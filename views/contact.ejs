@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%-include('./partials/head')%> 
+<%-include ('./partials/head') %>
+
   <body>
-   <%-include('./partials/nav')%> 
-    <main class="page">
-     <section class="contact-container">
+    <!-- nav  -->
+    <%-include ('./partials/nav2') %>
+      <!-- end of nav -->
+      <main class="page">
+        <section class="contact-container">
           <article class="contact-info">
             <h3>Want To Get In Touch?</h3>
             <p>
@@ -17,19 +20,18 @@
               cold-pressed fanny pack bicycle rights cardigan poke.
             </p>
           </article>
-
           <article>
-            <form class="form contact-form" action="/insert" method="post">
+            <form class="form contact-form">
               <div class="form-row">
-                <label html="name" class="form-label">your name*</label>
-                <input type="text" name="fullName" id="name" class="form-input" />
+                <label html="name" class="form-label">your name</label>
+                <input type="text" name="name" id="name" class="form-input" />
               </div>
               <div class="form-row">
-                <label html="email" class="form-label">your email*</label>
+                <label html="email" class="form-label">your email</label>
                 <input type="text" name="email" id="email" class="form-input" />
               </div>
               <div class="form-row">
-                <label html="message" class="form-label">message*</label>
+                <label html="message" class="form-label">message</label>
                 <textarea name="message" id="message" class="form-textarea"></textarea>
               </div>
               <button type="submit" class="btn btn-block">
@@ -38,39 +40,42 @@
             </form>
           </article>
         </section>
-     <!-- featured recipes -->
-       <section class="featured-recipes">
-        <h5 class="featured-title">Look At This Awesome souce!</h5>
-        <div class="recipes-list">
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img src="../recipes/recipe-1.jpeg" class="img recipe-img" alt="" />
-            <h5>Carne Asada</h5>
-            <p>Prep : 15min | Cook : 5min</p>
-          </a>
-          <!-- end of single recipe -->
 
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img src="../recipes/recipe-2.jpeg" class="img recipe-img" alt=""/>
-            <h5>Greek Ribs</h5>
-            <p>Prep : 15min | Cook : 5min</p>
-          </a>
-          <!-- end of single recipe -->
+        <!-- featured recipes -->
+        <section class="featured-recipes">
+          <h5 class="featured-title">Look At This Awesomesouce!</h5>
+          <div class="recipes-list">
 
-          <!-- single recipe -->
-          <a href="single-recipe.html" class="recipe">
-            <img src="../recipes/recipe-3.jpeg" class="img recipe-img"alt=""/>
-            <h5>Vegetable Soup</h5>
-            <p>Prep : 15min | Cook : 5min</p>
-          </a>
-          <!-- end of single recipe -->
-          
-        </div>
-      </section>
-    </main>
-   <%-include('./partials/footer')%> 
-   <script src="../js/main.js"></script>
-   <script src="../js/nav.js"></script>
+            <!--first single recipe -->
+            <% if (contactHome.length>0) { %>
+              <%contactHome.slice(contactHome.length-6,contactHome.length).reverse().forEach(data=> { %>
+
+                <a href="/get-single-info/<%=data._id %>" class="recipe">
+                  <img src="../imageUploads/<%=data.image %> " alt="" class=" img recipe-img">
+                  <h5>
+                    <%= data.recipeName %>
+                  </h5>
+                  <p>Prep:<%=data.preparationTime%> | Cook:<%=data.cookTime %>
+                  </p>
+
+                </a>
+
+                <% }) %>
+                  <% } else { %>
+                    <p>Content not available at the moment</p>
+                    <% } %>
+
+
+          </div>
+        </section>
+
+      </main>
+      <!-- footer -->
+      <%-include('./partials/footer')%>
+        <!-- footer ends -->
+
+        <script src="../js/main.js"></script>
+        <script src="../js/nav.js"></script>
   </body>
+
 </html>

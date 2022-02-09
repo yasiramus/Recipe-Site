@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('./partials/head') %>
+
+    <body>
+        <%-include('./partials/nav2') %>
+
+            <main class="page">
+
+                <div class="recipes-list">
+                <% if (recipe !='' ) { %>
+                    <% recipe.forEach((recipes,index)=> { %>
+                        <a href="/get-single-info/<%=recipes._id %>" class="recipe">
+                                <img src="../imageUploads/<%=recipes.image %> " alt="<%= recipes.recipeName %> "
+                                    class="img recipe-img">
+                                <h5>
+                                    <%= recipes.recipeName %>
+                                </h5>
+                            </a>
+
+                            <% }) %>
+                                <% } else { %>
+                                    <p id="all-recipe">No Food item</p>
+                                    <% } %>
+
+                        </div>
+            </main>
+
+            <!-- footer -->
+            <%-include('./partials/footer')%>
+                <!-- footer ends -->
+
+                <script src="../js/main.js"></script>
+                <script src="../js/nav.js"></script>
+
+    </body>
+
+</html>

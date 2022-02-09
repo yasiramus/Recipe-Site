@@ -22,7 +22,7 @@ const newRecipeSchema = new Schema({
     bio: {
         type: String,
         required: true,
-        maxlength: 500
+        maxlength: 800
     },
     preparationTime: {
         type: String,
@@ -47,10 +47,12 @@ const newRecipeSchema = new Schema({
     instructions: {
         type: String,
         required: true,
-        maxlength: 500
+        maxlength: 700
     }
 },{timestamps:true});
 
+
+newRecipeSchema.index({recipeName:'text',category:'text'})
 const Recipe=mongoose.model('Recipe',newRecipeSchema);
 
 module.exports=Recipe;

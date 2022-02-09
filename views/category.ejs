@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include ('./partials/head') %> 
+<body>
+  <%-include ('./partials/nav2') %> 
+<main class="page">
+
+  <div class="featured-recipes">
+    <% if (homeData.length>0) { %>
+      <%homeData.forEach(data=> { %>
+        <h4>
+          <%=data.category%>
+        </h4>
+        <div class="recipes-list">
+        <a href="/get-single-info/<%=data._id %>" class="recipe">
+            <img src="../imageUploads/<%=data.image%> " class="img recipe-img" alt="category image" />
+            <h5>
+              <%= data.recipeName %>
+            </h5>
+            <p>Prep :<%= data.preparationTime %>| Cook : <%=data.cookTime%>
+            </p>
+          </a>
+        </div>
+        <% }) %>
+          <% } else { %>
+            <p>Content not available at the moment</p>
+            <% } %>
+  </div>
+</main>
+  <!-- footer -->
+  <%-include('./partials/footer')%>
+  <!-- footer ends -->
+  <script src="../js/main.js"></script>
+  <script src="../js/nav.js"></script>
+</body>
+</html>

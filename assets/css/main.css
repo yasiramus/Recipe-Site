@@ -141,6 +141,12 @@ ul {
   display: block;
   object-fit: cover;
 }
+#custom{
+  width: 90%;
+    display: block;
+    object-fit: cover;
+  
+}
 /* buttons */
 
 .btn {
@@ -303,7 +309,7 @@ Navbar
 }
 .nav-links {
   height: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   transition: var(--transition);

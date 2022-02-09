@@ -21,11 +21,18 @@ const RecipeController=require('../controller/newrecipecontroller');
 router.post('/insertrecipe',upload.single('image'), RecipeController.SaveRecipe);
 
 //fetching all information
-router.get('/index',RecipeController.fetchRecipe);
+router.get("/index",RecipeController.fetchRecipe);
 
 router.get('/get-single-info/:id',RecipeController.FetchSingle);
 
 router.get('/about',RecipeController.Aboutdata);
 
-router.get('/rest',RecipeController.RecipeData);
+router.get('/all_recipes',RecipeController.AllRecipes)
+
+router.get('/single-recipe',RecipeController.Single_Recipe)
+router.get('/tag-template',RecipeController.Tag_Template)
+router.post('/search',RecipeController.Search)
+router.get('/category',RecipeController.category)
+router.post('/getRecipe',RecipeController.liveSearch)
+router.get('/contact',RecipeController.ContactHome)
 module.exports=router;

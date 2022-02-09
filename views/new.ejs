@@ -37,11 +37,11 @@
                                 </article>
                             </div>
                             <p class="recipe-tags">
-                                Tags : <a href="tag-template">beef</a>
-                                <a href="tag-template">breakfast</a>
-                                <a href="tag-template">lunch</a>
-                                <a href="tag-template">pancakes</a>
-                            </p>
+                                Tags : <a href="/category">beef</a>
+                                <a href="/category">breakfast</a>
+                                <a href="/category">lunch</a>
+                                <a href="/category">pancakes</a>
+                              </p>
                         </article>
                     </section>
                     <!-- content -->
@@ -49,28 +49,41 @@
                         <article>
                             <h4>instructions</h4>
                             <!-- single instruction -->
-                            <div class="single-instruction">
-                                <header>
-                                    <p>step involve</p>
+
+                                
+                            <% data.instructions.split(',').forEach((element,index)=> { %>
+                                
+                                <div class="single-instruction">
+                                    <header>
+                                      <p>step <%=index+1%></p>
                                     <div></div>
-                                </header>
-                                <p>
-                                    <%= data.instructions %>
-                                </p>
-                            </div>
+
+                                    </header>
+                                <p><%= element %> </p>
+                             
+                                </div>
+                                
+                                <%}) %>
+                                
                         </article>
                         <article class="second-column">
                             <div>
                                 <h4>ingredients</h4>
-                                <p class="single-ingredient">
-                                    <%=data.ingredients %>
-                                </p>
+                                <% data.ingredients.split(',').forEach(element => { %>
+                                 
+                                    <p class="single-ingredient"><%= element %> 
+                                    </p>
+                                <% }) %>
                             </div>
                             <div>
                                 <h4>items needed</h4>
-                                <p class="single-tool">
-                                    <%=data.itemsNeeded%>
-                                </p>
+                                <% data.itemsNeeded.split(',').forEach(element => { %>
+                                 
+                                    <p class="single-tool">
+                                        <%=element%>
+                                    </p>
+                                <% }) %>
+                               
                             </div>
                         </article>
                     </section>
