@@ -5,6 +5,3 @@ module.exports.NewRecipe=(req,res)=>{
 };
 
 
-module.exports.Login=(req,res)=>{
-    res.render('login',{title:'Login Page'})
-};

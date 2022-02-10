@@ -9,6 +9,7 @@ const cors=require('cors')
 const route = require('../routes/contact');
 const render = require('../routes/render');
 const recipe = require('../routes/routerecipe');
+const login = require('../routes/loginrouter');
 
 //requiring the morgan middleware
 const morgan = require('morgan')
@@ -30,6 +31,7 @@ app.use(express.json())//req.body
 app.use(route);
 app.use(render);
 app.use(recipe);
+app.use(login);
 
 //serving static files
 app.use(express.static('assets'));

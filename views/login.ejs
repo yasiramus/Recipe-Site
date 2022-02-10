@@ -5,7 +5,7 @@
     <body>
         <%-include ('./partials/nav2') %>
         <article>
-            <form action="" method="post" class="Loginform ">
+            <form action="/login" method="post" class="Loginform ">
                 <div class="form-row">
                     <label for="Username" class="form-label">Username</label>
                     <input type="text" name="username" placeholder="Enter name of username" class="form-input">
@@ -16,9 +16,12 @@
                 </div>
                 <div class="form-row">
                     <label for="Recipe Password" class="form-label">Password</label>
-                    <input type="password" name="Password" placeholder="Enter name of password" class="form-input">
+                    <input type="password" name="password" placeholder="Enter name of password" class="form-input">
                 </div>
-                <button type="submit" class="btn btn-block"> submit </button>
+                <button type="submit" class="btn btn-block"> LogIn </button>
+                <div>
+                    <p class="userSignUp">Already have an account? |<a href="/register">SignUp</a></p>
+                </div>
             </form>
         </article>
             <!-- footer -->
