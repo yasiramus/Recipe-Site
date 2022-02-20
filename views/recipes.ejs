@@ -15,16 +15,16 @@
             <div class="recipes-list">
               <%recipeData.reverse().forEach(data=> { %>
                 <a href="/get-single-info/<%=data._id %>" class="recipe">
-                  <img src="../imageUploads/<%=data.image %> " alt="" class="img recipe-img">
+                  <img src="../imageUploads/<%=data.image %> " alt="<%= data.recipeName %>" class="img recipe-img">
                   <h5>
                     <%= data.recipeName %>
                   </h5>
-                  <p>Prep:<%=data.preparationTime%> | Cook:<%=data.cookTime %>
+                  <p>Cook:<%=data.cookTime %>
                   </p>
                 </a>
                 <% }) %>
                   <% } else { %>
-                    <p>Content not available at the moment</p>
+                    <p>Recipe Content not available at the moment</p>
                     <% } %>
           </div>
         </section>

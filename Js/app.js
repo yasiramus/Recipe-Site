@@ -1,15 +1,22 @@
 //requiring the express framework
 const express = require('express');
 
+const { checkUser } = require('../middleware/auth.user')
 //requiring the dotenv npm package
 require('dotenv').config();
 
-const cors=require('cors')
+//declaring a variable and equating it to the express framework
+const app = express();
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser()); //cookies
+
+// const cors=require('cors')
+
 //requiring the route folder
-const route = require('../routes/contact');
-const render = require('../routes/render');
+const contact = require('../routes/contact');
 const recipe = require('../routes/routerecipe');
-const login = require('../routes/loginrouter');
+const users = require('../routes/userRoute');
 
 //requiring the morgan middleware
 const morgan = require('morgan')
@@ -17,8 +24,7 @@ const morgan = require('morgan')
 //requiring the mongoose npm package for mongodb
 const mongoose = require('mongoose');
 
-//declaring a variable and equating it to the express framework
-const app = express();
+
 
 //setting the view engine
 app.set('view engine', 'ejs');
@@ -28,14 +34,14 @@ app.use(express.urlencoded({ extended: true }));//allow us to send form data to 
 app.use(express.json())//req.body
 
 //setting the route folder globally
-app.use(route);
-app.use(render);
+app.use(contact);
 app.use(recipe);
-app.use(login);
+app.use(users);
 
 //serving static files
 app.use(express.static('assets'));
-app.use(cors)
+// app.use(cors)
+
 
 
 //setting the morgan and Using the predefined format string
@@ -62,7 +68,7 @@ mongoose
     console.log(err.message);
   });
 
-app.use((req, res) => {
+app.use(checkUser,(req, res) => {
   res.status(404).render('404',{title:'Error Page'})
 });
 

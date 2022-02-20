@@ -16,13 +16,13 @@
                                 <%= data.bio %>
                             </p>
                             <div class="recipe-icons">
-                                <article>
+                                <!-- <article>
                                     <i class="fas fa-clock"></i>
                                     <h5>prep time</h5>
                                     <p>
                                         <%= data.preparationTime%>.
                                     </p>
-                                </article>
+                                </article> -->
                                 <article>
                                     <i class="far fa-clock"></i>
                                     <h5>cook time</h5>
@@ -30,11 +30,11 @@
                                         <%=data.cookTime%>.
                                     </p>
                                 </article>
-                                <article>
+                                <!-- <article>
                                     <i class="fas fa-user-friends"></i>
                                     <h5>serving</h5>
                                     <p>6 servings</p>
-                                </article>
+                                </article> -->
                             </div>
                             <p class="recipe-tags">
                                 Tags : <a href="/category">beef</a>
@@ -49,28 +49,20 @@
                         <article>
                             <h4>instructions</h4>
                             <!-- single instruction -->
-
-                                
                             <% data.instructions.split(',').forEach((element,index)=> { %>
-                                
                                 <div class="single-instruction">
                                     <header>
                                       <p>step <%=index+1%></p>
                                     <div></div>
-
                                     </header>
                                 <p><%= element %> </p>
-                             
                                 </div>
-                                
                                 <%}) %>
-                                
                         </article>
                         <article class="second-column">
                             <div>
                                 <h4>ingredients</h4>
                                 <% data.ingredients.split(',').forEach(element => { %>
-                                 
                                     <p class="single-ingredient"><%= element %> 
                                     </p>
                                 <% }) %>

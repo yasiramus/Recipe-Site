@@ -1,0 +1,84 @@
+<!-- from login controller for the login section  -->
+
+// try {
+    //     // const users = await Users.login(userName, password)
+    //     const user= await Users.siralog()
+    //     // User.existsMiddleware.bind(User
+    //     const token = generateToken(newUsers._id) //token created
+    //     res.cookie('jwt', token, { maxAge: 3 * 24 * 60 * 60 * 1000, httpOnly: true })//set the max age
+       
+    //     res.status(200).json({ user: user._id })
+    // } catch (error) {
+    //     // const errors = handleErrors( )  
+    //     res.status(400).json({error})
+    // }
+
+
+    <!-- generting token for the sign up -->
+    // const token = generateToken(newUsers._id) //token created
+    // res.cookie('jwt', token, { maxAge: 3 * 24 * 60 * 60 * 1000, httpOnly: true })//set the max age
+
+    <!-- from the login js file -->
+    // form.addEventListener("submit", async (e) => {
+        //     e.preventDefault();
+        
+        //     //getting the values when the user input their details and click on the signup btn
+        //     const userName = form.userName.value;
+        //     const password = form.password.value;
+        
+        //     //resetting of errors 
+        //     userNameError.textContent = "";
+        //     passwordError.textContent = "";
+        
+        //     try {
+        //         const response = await fetch("/login", {
+        //             method: "POST",
+        //             headers: { "Content-Type":"application/json" },
+        //             body: JSON.stringify({userName, password,}),
+        //         });
+        
+        //         const data = await response.json();
+        //         console.log(data)
+        
+        //         // displaying error to the user
+        //         if (data.errors) {
+        //             userNameError.textContent = data.errors.userName;
+        //             passwordError.textContent = data.errors.password;
+        //         }
+        
+        //         //checking the presence of the user
+        //         if (data.user) {
+        //             //redirect the user to the login page after signing up
+        //             location.assign("/index");
+        //         }
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // });
+        
+
+        
+        //from the user helper file 
+        under /validation errors
+        // Object.values(err.errors).forEach((prop) => {
+            //   if (prop.path === "fullName") {
+            //     errors.fullName = prop.message
+            //   }
+        
+            //   else if (prop.path === "userName") {
+            //     errors.userName = prop.message
+            //   }
+        
+            //   else if (prop.path === "email") {
+            //     errors.email = prop.message
+            //   }
+              
+            //   else if (prop.path === "password") {
+            //     errors.password = prop.message;
+            //   }
+        
+            //    else if (prop.path === "confirmPassword") {
+            //     errors.confirmPassword = prop.message
+            //   }
+        
+            // })

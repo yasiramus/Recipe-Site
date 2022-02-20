@@ -33,13 +33,22 @@
                 </div>
 
                 <div class="timecalculate form-label">
-                    <label for="Preparation Time">Preparation Time</label>
-                    <input type="time" name="preparationTime" class="option">
-                    <label for="  Cook Time"> Cook Time</label>
-                    <input type="time" name="cookTime" class="option">
+                    <label for=" Cook Time"> Cook Time</label>
+                    <!-- <input type="minutes" min="0.00" max="100.59" name="cookTime" class="option"> -->
+                    <select name="cookTime" id="cookTime" class="option">
+                        <option value="default" selected >select a cookTime</option>
+                        <option value="Beef">10</option>
+                        <option value="Breakfast">20</option>
+                        <option value="Lunch">30</option>
+                        <option value="Snack">40</option>
+                        <option value="Dinner">45</option>
+                        <option value="Dinner">50</option>
+                        <option value="Dinner">55</option>
+                        <option value="Dinner">59</option>
+                    </select>
                 </div>
-                <div class="form-row">
 
+                <div class="form-row">
                     <label for=" Ingredients" class="form-label">Ingredients</label>
                     <textarea name="ingredients" id="ingredients" cols="30" rows="10" placeholder="input ingredients"
                         class="form-textarea"></textarea>

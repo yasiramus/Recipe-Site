@@ -9,7 +9,7 @@
 
                 <div class="recipes-list">
                 <% if (recipe !='' ) { %>
-                    <% recipe.forEach((recipes,index)=> { %>
+                    <% recipe.forEach(recipes=> { %>
                         <a href="/get-single-info/<%=recipes._id %>" class="recipe">
                                 <img src="../imageUploads/<%=recipes.image %> " alt="<%= recipes.recipeName %> "
                                     class="img recipe-img">

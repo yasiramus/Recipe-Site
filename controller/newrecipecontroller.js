@@ -11,7 +11,6 @@ const SaveRecipe = (req, res) => {
     recipeName: req.body.recipeName,
     category: req.body.category,
     bio: req.body.bio,
-    preparationTime: req.body.preparationTime,
     cookTime: req.body.cookTime,
     ingredients: req.body.ingredients,
     itemsNeeded: req.body.itemsNeeded,

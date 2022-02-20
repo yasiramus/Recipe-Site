@@ -55,7 +55,7 @@
 
 
       <div class="nav-link contact-link">
-        <a href="/contact" class="btn"> contact </a>
+        <a href="/contact" class="btn" id="btn"> contact </a>
       </div>
 
 
@@ -71,18 +71,30 @@
         </form>
       </div>
 
+      <%if(user){%> 
+        <h6  class="nav-link" id="welcome"> Welcome <%=user.userName %></h6>
+        <div class="log-in-container">
+          <span class="log-links">
+            <a href="/logout" class="log">LogOut</a>
+          </span>
+        </div>
+        <% } else { %>
+      
+      <div class="log-in-container">
+        <span class="log-links">
+          <a href="/register"><span>Register</span></a>
+        </span>
+      </div>
 
       <div class="log-in-container">
         <span class="log-links">
-          <a href="/register"><span>Sign Up</span></a>
-          <li>/</li>
-          <a href="/login" class="log">Log In</a>
+          <a href="/get_login" class="log">Log In</a>
         </span>
-
       </div>
-
+      <% } %>
+    
+  
     </div>
-
 </nav>
 
 

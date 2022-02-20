@@ -14,6 +14,7 @@ const newRecipeSchema = new Schema({
     },
     category:{
         type: String,
+        required:true,
         enum:{
             values:['Beef','Breakfast','Lunch','Snack','Dinner'],
             message:'{VALUE} is not supported'
@@ -24,15 +25,13 @@ const newRecipeSchema = new Schema({
         required: true,
         maxlength: 800
     },
-    preparationTime: {
+    cookTime:{
         type: String,
-        required: true,
-        maxlength: 30
-    },
-    cookTime: {
-        type: String,
-        required: true,
-        maxlength: 30
+        required:true,
+        enum:{
+            values:['10','20','30','40','50','55','59'],
+            message:'{VALUE} is not supported'
+        }
     },
     ingredients: {
         type: String,

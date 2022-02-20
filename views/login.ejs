@@ -3,24 +3,23 @@
 <%-include ('./partials/head') %>
 
     <body>
-        <%-include ('./partials/nav2') %>
+        <%-include ('./partials/nav') %>
         <article>
-            <form action="/login" method="post" class="Loginform ">
+            <form class="Loginform" id="userLogin">
                 <div class="form-row">
                     <label for="Username" class="form-label">Username</label>
-                    <input type="text" name="username" placeholder="Enter name of username" class="form-input">
+                    <input type="text" name="userName" placeholder="Enter name of username" class="form-input">
+                    <div class="userNameError" style="color: tomato; text-align: center"></div>
                 </div>
-                <div class="form-row">
-                    <label for="Email" class="form-label">Email</label>
-                    <input type="email" name="email" placeholder="Enter name of email" class="form-input">
-                </div>
+                
                 <div class="form-row">
                     <label for="Recipe Password" class="form-label">Password</label>
                     <input type="password" name="password" placeholder="Enter name of password" class="form-input">
+                    <div class="passwordError" style="color: tomato; text-align: center"></div>
                 </div>
                 <button type="submit" class="btn btn-block"> LogIn </button>
                 <div>
-                    <p class="userSignUp">Already have an account? |<a href="/register">SignUp</a></p>
+                    <p class="userSignUp">Don't have an account? |<a href="/register">SignUp</a></p>
                 </div>
             </form>
         </article>
@@ -29,5 +28,7 @@
                 <!-- footer ends -->
                 <script src="../js/main.js"></script>
                 <script src="../js/nav.js"></script>
+
+                <script src="../js/login.js"></script>
     </body>
 </html>

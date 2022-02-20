@@ -21,7 +21,7 @@
             </p>
           </article>
           <article>
-            <form class="form contact-form">
+            <form class="form contact-form" id="form-contact">
               <div class="form-row">
                 <label html="name" class="form-label">your name</label>
                 <input type="text" name="name" id="name" class="form-input" />
@@ -51,11 +51,11 @@
               <%contactHome.slice(contactHome.length-6,contactHome.length).reverse().forEach(data=> { %>
 
                 <a href="/get-single-info/<%=data._id %>" class="recipe">
-                  <img src="../imageUploads/<%=data.image %> " alt="" class=" img recipe-img">
+                  <img src="../imageUploads/<%=data.image %> " alt="<%= data.recipeName %>" class=" img recipe-img">
                   <h5>
                     <%= data.recipeName %>
                   </h5>
-                  <p>Prep:<%=data.preparationTime%> | Cook:<%=data.cookTime %>
+                  <p>Cook:<%=data.cookTime %>
                   </p>
 
                 </a>
@@ -76,6 +76,12 @@
 
         <script src="../js/main.js"></script>
         <script src="../js/nav.js"></script>
+        <script>
+          const form = document.querySelector('#form-contact');
+          form.addEventListener('submit',(e) => {
+              e.preventDefault();
+          })
+        </script>
   </body>
 
 </html>

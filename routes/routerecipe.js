@@ -2,6 +2,7 @@ const express=require('express');
 const router=express.Router();
 const multer=require('multer');
 
+const { checkUser } = require('../middleware/auth.user')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -14,8 +15,11 @@ const storage = multer.diskStorage({
 
   const upload = multer({ storage});
 
+
 //requiring the controller folder
 const RecipeController=require('../controller/newrecipecontroller');
+
+router.get('*', checkUser);
 
 //saving data
 router.post('/insertrecipe',upload.single('image'), RecipeController.SaveRecipe);
@@ -30,9 +34,15 @@ router.get('/about',RecipeController.Aboutdata);
 router.get('/all_recipes',RecipeController.AllRecipes)
 
 router.get('/single-recipe',RecipeController.Single_Recipe)
+
 router.get('/tag-template',RecipeController.Tag_Template)
-router.post('/search',RecipeController.Search)
+
+router.post('/search',checkUser,RecipeController.Search)
+
 router.get('/category',RecipeController.category)
+
 router.post('/getRecipe',RecipeController.liveSearch)
+
 router.get('/contact',RecipeController.ContactHome)
+
 module.exports=router;
