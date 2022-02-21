@@ -69,13 +69,13 @@
         <button class="search-btn"><i class="fa fa-search"></i></button>
         <form method="post" action="/search">
           <input type="text" name="searchTerm" id="search-input" placeholder="search for recipe or categories..."
-            onkeyup="searchData(this)">
+            onkeyup="searchData(this)" autocomplete="off">
           <div class="searchResult"></div>
         </form>
       </div>
       
 <% if (user) { %>
-  <a  class="nav-link"id="welcome"> Welcome <%=user.userName %></a>
+  <h6  class="nav-link" id="welcome"> Welcome <%=user.userName %></h6>
         <div class="log-in-container">
           <span class="log-links">
             <a href="/logout" class="log">LogOut</a>

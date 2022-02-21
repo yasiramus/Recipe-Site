@@ -86,7 +86,7 @@ function searchData(e) {
           // searchResponses.innerHTML += `<hr>`;
           searchResponses.innerHTML += ` <div class="main-search-template">
                                         <div class="recipe-cards">
-                                          <p class="card"> <a href='/getRecipe'>${item.recipeName}</a></p>
+                                          <p class="card"><a href='/all_recipes'>${item.recipeName}</a></p>
                                         </div>
                                       </div>`;
           // searchResponses.innerHTML += `<p>${item.category}</p>`

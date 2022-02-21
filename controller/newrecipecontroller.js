@@ -34,7 +34,7 @@ const fetchRecipe = (req, res) => {
   // console.log(req.body);
   NewRecipe.find().then(success => {
     if (success) {
-      res.render('index', { title: 'New Home Page', homeData: success })
+      res.render('main', { title: 'Main Page', homeData: success })
     }
   }).catch(err => {
     console.log(err.message)
@@ -42,11 +42,8 @@ const fetchRecipe = (req, res) => {
 };
 
 const AllRecipes = (req, res) => {
-  // console.log(req.body);
   NewRecipe.find().then(success => {
-    // NewRecipe.findById(req.params.id).then(success =>{
     if (success) {
-      // res.send(success)
       res.render('recipes',{title:'All Recipes',recipeData:success})
     }
   }).catch(err => {
@@ -59,7 +56,7 @@ const FetchSingle = (req, res) => {
   NewRecipe.findById(req.params.id).then((success) => {
     if (success) {
       console.log('Information has been fetched successfully')
-      res.render('new', { title: 'New Page', data: success })
+      res.render('single_recipe', { title: 'Full details of recipe page', data: success })
     }
   }).catch(err => {
     console.log(err.message)
@@ -67,37 +64,7 @@ const FetchSingle = (req, res) => {
 };
 
 
-const Aboutdata = (req, res) => {
-  NewRecipe.find().then(success => {
-    if (success) {
-      res.render('about', { title: 'About Page', aboutData: success })
-    }
-  }).catch(err => {
-    console.log(err.message)
-  })
-};
-
-
-const Single_Recipe = (req, res) => {
-  NewRecipe.find().then(success => {
-    if (success) {
-      res.render('single-recipe', { title: 'Single Recipe Page', Data: success })
-    }
-  }).catch(err => {
-    console.log(err.message)
-  })
-};
-
-const Tag_Template = (req, res) => {
-  NewRecipe.find().then(success => {
-    if (success) {
-      res.render('tag-template', { title: 'Single Recipe Page', tagData: success })
-    }
-  }).catch(err => {
-    console.log(err.message)
-  })
-}
-
+//search section
 const Search = async (req, res) => {
   try {
     let searchTerm = req.body.searchTerm;
@@ -117,6 +84,7 @@ const liveSearch = async (req, res) => {
   NewSearch = NewSearch.slice(0, 10)
   res.send({ payload: NewSearch })
 }
+//end of search seaction
 
 const category = (req, res) => {
   NewRecipe.find().then(success => {
@@ -134,13 +102,11 @@ const ContactHome = (req, res) => {
   })
 };
 
+
 module.exports = {
   SaveRecipe,
   fetchRecipe,
   FetchSingle,
-  Aboutdata,
-  Single_Recipe,
-  Tag_Template,
   Search,
   category,
   liveSearch,

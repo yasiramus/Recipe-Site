@@ -6,7 +6,7 @@ html{
   width: 60vw;
   background: #fff;
   border-radius: 0.25rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
@@ -15,7 +15,7 @@ html{
   width: 40vw;
   background: #fff;
   border-radius: 0.25rem;
-  box-shadow:     0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
@@ -99,7 +99,8 @@ the user clicks on the dropdown button) */
 
 .log-in-container{
   /* margin-right: -3rem; */
-  margin-left: 5px;
+  /* margin-left: 5px; */
+  margin-left: .9rem;
   cursor: pointer;
   color: #fff;
   background-color: #0f5132;
@@ -118,7 +119,7 @@ the user clicks on the dropdown button) */
 
 .search-container{
   position: relative;
-  margin: 0 10px;
+  /* margin: 0 10px; */
   text-align: center;
 }
 
@@ -147,8 +148,8 @@ the user clicks on the dropdown button) */
       background-color: #0f5132;
       top: 0;
       left: 0;
-      width: 33px;
-      height: 33px;
+      width: 30px;
+      height: 30px;
       border: 0;
       font-size:1rem;
       transition: transform 0.3s ease;
@@ -272,4 +273,9 @@ box-shadow: 0px 6px 12px rgb(37 44 54 / 25%);
 
 #welcome:hover{
   color: #000;
+}
+.smile-icon {
+  font-size: 1.5rem;
+  color: #0f5132;
+  margin: 0 10px;
 }

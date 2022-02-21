@@ -7,8 +7,7 @@ module.exports.handleErrors = (err) => {
     fullName: "",
     userName: "",
     email: "",
-    password: "",
-    confirmPassword: ""
+    password: ""
   }
 
 

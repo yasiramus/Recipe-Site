@@ -24,18 +24,12 @@ router.get('*', checkUser);
 //saving data
 router.post('/insertrecipe',upload.single('image'), RecipeController.SaveRecipe);
 
-//fetching all information
+//fetching all information from the main.ejs
 router.get("/index",RecipeController.fetchRecipe);
 
 router.get('/get-single-info/:id',RecipeController.FetchSingle);
 
-router.get('/about',RecipeController.Aboutdata);
-
 router.get('/all_recipes',RecipeController.AllRecipes)
-
-router.get('/single-recipe',RecipeController.Single_Recipe)
-
-router.get('/tag-template',RecipeController.Tag_Template)
 
 router.post('/search',checkUser,RecipeController.Search)
 
