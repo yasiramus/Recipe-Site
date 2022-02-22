@@ -3,6 +3,7 @@ const fullNameError = document.querySelector(".fullNameError");
 const userNameError = document.querySelector(".userNameError");
 const emailError = document.querySelector(".emailError");
 const passwordError = document.querySelector(".passwordError");
+
 //error message confirming password
 const confirmPasswordError = document.querySelector('.confirmPasswordError');
 
@@ -22,74 +23,57 @@ form.addEventListener("submit", async (e) => {
     userNameError.textContent = "";
     emailError.textContent = "";
     passwordError.textContent = "";
+    confirmPasswordError.textContent="";
 
-    if(password!=confirmPassword)
-    {
-          confirmPasswordError.textContent = "password don't match"
-          // window.location.replace("/http://localhost:5000/register")
-      }
-else{
-
-
-
-
-    try {
-        const response = await fetch("/signup", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                fullName,
-                userName,
-                email,
-                password
-            }),
-
-        });
-
-        const data = await response.json();
-        console.log(data)
-
-        // displaying error to the user
-        //these section error message has been set from the database
-        if (data.errors) {
-            fullNameError.textContent = data.errors.fullName;
-            userNameError.textContent = data.errors.userName;
-            emailError.textContent = data.errors.email;
-            passwordError.textContent = data.errors.password;
-        }
-
-
-        //confirming password matches
-        //handling of the confirmation of password has been set at the fronend only
-        // meaning confirming password isnt done at the database side 
-        // if (password.length != 0) {
-            // if (password === confirmPassword) {
-                 if (data.newUsers) {
-            //redirect the user to the login page after signing up
-            location.assign("/get_login");
-        }
-            //     // confirmPasswordError.textContent = 'Password match ';
-            //     confirmPasswordError.style.display = 'none'
-            // }
-        //     if(password!=confirmPassword)
-        //   {
-        //         confirmPasswordError.textContent = "password don't match"
-        //         // window.location.replace("/http://localhost:5000/register")
-        //     }
-
-        }
-        // else {
-        //     confirmPasswordError.textContent = "passwords can't be empty"
-        //     // location.replace("/register")
-        // }
-
-        //checking the presence of the user
-        // if (data.newUsers) {
-        //     //redirect the user to the login page after signing up
-        //     location.assign("/get_login");
-        // }
-     catch (error) {
-        console.log(error);
+    //handling of the confirmation of password has been set at the fronend only
+    // meaning confirming password isnt done at the database side 
+    //if password do not match excute the code in the block
+    if (password != confirmPassword) {
+        confirmPasswordError.textContent = "Password don't match"
     }
-    }
+
+    //confirming password
+    //if password matches excute the code within the else block
+    else {
+        try {
+
+            const response = await fetch("/signup", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+
+                body: JSON.stringify({
+                    fullName,
+                    userName,
+                    email,
+                    password
+                }),
+
+            });
+
+            const data = await response.json();
+            //this will display the new user created id in the console
+            // console.log(data)
+
+            // displaying error to the user
+            //these section error message has been set from the database
+            if (data.errors) {
+                fullNameError.textContent = data.errors.fullName;
+                userNameError.textContent = data.errors.userName;
+                emailError.textContent = data.errors.email;
+                passwordError.textContent = data.errors.password;
+            };
+
+            //checking the presence of the user
+            //meaning if user exit redirect the user to the login page
+            if (data.newUsers) {
+                //redirect the user to the login page after signing up
+                location.assign("/get_login");
+            };
+
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+    
 });

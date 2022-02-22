@@ -111,10 +111,10 @@ ul {
 
 /* form */
 .form {
-  width: 90vw;
+  /* width: 90vw; */
   max-width: 600px;
   background: #fff;
-  border: radius 0.25rem;;
+  border-radius:  0.25rem;;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
   0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 2rem 2.5rem;
@@ -395,6 +395,9 @@ Recipes
   margin-top: 0.25rem;
   line-height: 1;
   color: #334155;
+}
+#contact-recipe h5 {
+  text-align: center;
 }
 .recipe p {
   margin-bottom: 0;

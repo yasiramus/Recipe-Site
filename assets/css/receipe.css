@@ -15,7 +15,8 @@ html{
   width: 40vw;
   background: #fff;
   border-radius: 0.25rem;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
@@ -116,7 +117,24 @@ the user clicks on the dropdown button) */
     box-shadow:  0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
+#logout{
+  margin-left: .9rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #5c0707;
+  border: transparent;
+  border-radius: 0.25rem;
+ letter-spacing: 1px;
+  box-shadow:  0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition:  0.3s ease-in-out all;
+  padding: 0.10rem 0.5rem;
+}
 
+#logout:hover{
+  background-color: #b10606;
+    box-shadow:  0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
 .search-container{
   position: relative;
   /* margin: 0 10px; */

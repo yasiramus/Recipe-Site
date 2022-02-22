@@ -17,30 +17,28 @@ const userSchema = new Schema(
     userName: {
       type: String,
       required: [true, "Please enter username"],
+      lowercase: true,
       unique: true,
-      maxlength: [10, "Username should below 40 characters"],
+      maxlength: [10, "Username should below 10 characters"],
     },
     email: {
       type: String,
-      required: [true, "please enter email"],
+      required: [true, "Please enter email"],
       lowercase: true,
       unique: true,
-      minlength: [5, "minimum email length should be above 5"],
-      maxlength: [20, "email entered must be below 50 characters"],
+      minlength: [5, "Minimum email length should be above 5 characters"],
+      maxlength: [20, "Email entered must be below 20 characters"],
     },
     password: {
       type: String,
       required: [true, "Please enter password"],
       minlength: [5, "Please password length should be six and above"],
-      maxlength: [20, "Sorry you exced the number of characters"],
-    },
-    // confirmPassword: {
-    //   type: String,
-    //   required: [true, "Re enter previous password"],
-    //   minlength: [5, "Please password length should be six and above"],
-    // },
+      maxlength: [20, "Sorry you exceeded the required number of characters"],
+    }
   },
+
   { timestamps: true }
+  
 );
 
 // this is a mongoose hooks

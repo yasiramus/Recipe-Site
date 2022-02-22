@@ -24,11 +24,11 @@
             <form class="form contact-form" id="form-contact">
               <div class="form-row">
                 <label html="name" class="form-label">your name</label>
-                <input type="text" name="name" id="name" class="form-input" />
+                <input type="text" name="name" id="name" class="form-input" autocomplete="off" />
               </div>
               <div class="form-row">
                 <label html="email" class="form-label">your email</label>
-                <input type="text" name="email" id="email" class="form-input" />
+                <input type="text" name="email" id="email" class="form-input" autocomplete="off" />
               </div>
               <div class="form-row">
                 <label html="message" class="form-label">message</label>
@@ -50,14 +50,11 @@
             <% if (contactHome.length>0) { %>
               <%contactHome.slice(contactHome.length-6,contactHome.length).reverse().forEach(data=> { %>
 
-                <a href="/get-single-info/<%=data._id %>" class="recipe">
+                <a href="/get-single-info/<%=data._id %>" class="recipe" id="contact-recipe">
                   <img src="../imageUploads/<%=data.image %> " alt="<%= data.recipeName %>" class=" img recipe-img">
                   <h5>
                     <%= data.recipeName %>
                   </h5>
-                  <p>Cook:<%=data.cookTime %>
-                  </p>
-
                 </a>
 
                 <% }) %>
