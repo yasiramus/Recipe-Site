@@ -272,7 +272,7 @@ Page
 
 .page {
   width: 90vw;
-  max-width: 1120px;
+  /* max-width: 1120px; */
   margin: 0 auto;
 }
 .page {
@@ -357,7 +357,7 @@ Recipes
 .recipes-list {
   display: grid;
   gap: 2rem 1rem;
-  padding-bottom: 3rem;
+  padding: 3rem;
 }
 .tags-container {
   order: 1;
@@ -389,6 +389,7 @@ Recipes
   height: 15rem;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
+  /* box-shadow: 0 20px 30px rgb(0 0 0 / 20%); */
 }
 .recipe h5 {
   margin-bottom: 0;
@@ -474,6 +475,7 @@ About Page
 .about-img {
   border-radius: 0.25rem;
   height: 300px;
+  box-shadow: 0 20px 30px rgb(0 0 0 / 20%);
 }
 
 @media screen and (min-width: 992px) {

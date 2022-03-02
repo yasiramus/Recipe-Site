@@ -19,6 +19,7 @@ const newRecipeSchema = new Schema({
             values:['Beef','Breakfast','Lunch','Snack','Dinner'],
             message:'{VALUE} is not supported'
         }
+        // lowercase:true
     },
     bio: {
         type: String,
@@ -46,7 +47,7 @@ const newRecipeSchema = new Schema({
     instructions: {
         type: String,
         required: true,
-        maxlength: 700
+        // maxlength: 700
     }
 },{timestamps:true});
 
